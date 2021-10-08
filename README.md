@@ -25,5 +25,6 @@ After you download the application, install the required packages by using the c
 Alex Kichigin - [AKish777](https://github.com/AKish777)
 
 ## License
+This project Licensed under MIT.
 
 ## Contact
