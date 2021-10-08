@@ -22,6 +22,7 @@ This application allows a back-end for an e-commerce website which will allow fo
 After you download the application, install the required packages by using the command "npm i", After which you will seed your database, Finally run the server using your Git Bash! One more thing: Using the information form the Schema.sql file you will have to set the database.
 
 ## Contributors
+Alex Kichigin - [AKish777](https://github.com/AKish777)
 
 ## License
 
