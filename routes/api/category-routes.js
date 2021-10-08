@@ -18,7 +18,7 @@ router.get('/:id', async (req, res) => {
       include: [{ model: Product }],
     });
     if (!catData) {
-      res.status(400).json({message: 'ID doesnt match any known categories'});
+      res.status(400).json({message: 'This ID does not match any known categories, Check ID and try again!'});
       return;
     } else {
       res.status(200).json(catData);
@@ -47,7 +47,7 @@ router.put('/:id', async (req, res) => {
       },
     });
     if (!catData) {
-      res.status(400).json({'message': 'Check ID. No categories found.'});
+      res.status(400).json({'message': 'CThis ID does not match any known categories, Check ID and try again!'});
     } else {
       res.status(200).json([{'message': 'Category update successful!'}, {id: req.body.id, category_name: req.body.category_name}]);
     }
@@ -65,7 +65,7 @@ router.delete('/:id', async (req, res) => {
       },
     });
     if (!catDataDeleted) {
-      res.status(400).json({'message': 'Check ID. No categories found.'});
+      res.status(400).json({'message': 'This ID does not match any known categories, Check ID and try again!'});
     } else {
       res.status(200).json([{'message': 'Category delete successful!'}, {id: catDataDeleted.id, category_name: catDataDeleted.category_name}]);
     }
