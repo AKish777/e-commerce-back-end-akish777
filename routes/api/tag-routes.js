@@ -85,8 +85,23 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.delete('/:id', (req, res) => {
-  // delete on tag by its `id` value
+router.delete('/:id', async (req, res) => {
+  try{
+    const tagBeingDeleted = await Tag.findByPk(req.params.id);
+    await Tag.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!tagBeingDeleted) {
+      res.status(400).json({'message': 'This ID does not match any known products, Check ID and try again!'});
+    } else {
+      res.status(200).json([{'message': 'Product deleted successfully!'}, {id: tagBeingDeleted.id, tag_name: tagBeingDeleted.tag_name }]);
+    }
+  }
+  catch (err) {
+    res.status(400).json(err);
+  }
 });
 
 module.exports = router;
