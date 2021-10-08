@@ -16,6 +16,7 @@
 [Contact](#Contact)
 
 ## Description
+This application allows a back-end for an e-commerce website which will allow for competition between you and other companies
 
 ## Installation
 
