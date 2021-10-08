@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
       include: [{ model: Category}, { model: Tag }]
     });
     if (!productData) {
-      res.status(400).json({'message': 'No product found with that ID.'})
+      res.status(400).json({'message': 'This ID does not match any known products, Check ID and try again!'})
     } else {
       res.status(200).json(productData);
     };
@@ -94,9 +94,9 @@ router.delete('/:id', async (req, res) => {
       },
     });
     if (!productBeingDeleted) {
-      res.status(400).json({'message': 'No product found with that ID. Check ID and try again.'});
+      res.status(400).json({'message': 'This ID does not match any known products, Check ID and try again!'});
     } else {
-      res.status(200).json([{'message': 'Following product deleted successfully.'}, {id: productBeingDeleted.id, product_name: productBeingDeleted.product_name}]);
+      res.status(200).json([{'message': 'Product deleted successfully!'}, {id: productBeingDeleted.id, product_name: productBeingDeleted.product_name}]);
     }
   }
   catch (err) {
