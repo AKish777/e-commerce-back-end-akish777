@@ -29,3 +29,4 @@ This project Licensed under MIT.
 
 ## Contact
 If you have any interest in checking out any of my other applications or any of my other code feel free to check it out on my GitHub Account!
+Alex Kichigin - [AKish777](https://github.com/AKish777)
